@@ -28,7 +28,7 @@ python stress_ball_model.py
 Move the **Added load** slider, then press **Release**. Fit results and held-out predictions print in the terminal. T
 
 ## Credits
-NumPy, SciPy, Matplotlib; Spring-Gaus (Zhong et al., ECCV 2024) as related work; [AI assistance (Claude) for code and write-up, if you used it]
+NumPy, SciPy, Matplotlib; Spring-Gaus (Zhong et al., ECCV 2024) as related work; Claude, Gemini
 
 ## 1. Test Subject & Physical Motivation
 
