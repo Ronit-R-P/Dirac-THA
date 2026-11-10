@@ -1,16 +1,22 @@
-# TL;DR — Soft Body Manipulation Approach
+OVERVIEW
+I wanted to understand how soft, squishy objects deform and recover when handled. I picked a standard foam stress ball because its spherical shape makes the contact area clean to track, and open-cell foam makes it easy to observe how trapped air squeezes out of the material.
 
-I picked a standard 70 mm open-cell PU foam stress ball to study soft-body compression and recovery. A sphere keeps the contact geometry symmetrical, and open-cell foam makes it straightforward to observe how trapped air evacuates through internal pores during squeezing.
+MY TESTING APPROACH
+Instead of complicated lab machinery, I kept the setup grounded and practical. I placed a light wooden board over the ball, stacked weights on top step-by-step, and measured how flat it got and how much it bulged sideways. To figure out how fast it snaps back, I recorded the release in high frame rate video and counted the frames.
 
-### My Approach & Setup
-* **Bench-Top Load Test:** I stacked weights from 1 kg up to 14 kg on top of a 300 g wooden exam board, measuring exact compressed height and side bulge at every step.
-* **Video Motion Capture:** I recorded the release dynamics at 60 fps (59.81 fps) to count the exact recovery frames (11 to 15 frames, or roughly 0.18 to 0.25 seconds).
+HOW I REASONED THROUGH THE PROBLEM
 
-### Key Insights & Assumptions
-* **Ditching Simple Hooke's Law ($F=kx$):** A constant linear spring model fails here. As load increases, stiffness increases by over 80% before locking up. Extrapolating a basic linear spring to 14 kg would predict an impossible negative height.
-* **Enforcing the Physical Floor:** Once all pore air is expelled, solid polymer struts crush flat against each other. I modeled height drop using an exponential decay curve that asymptotically stops at the physical solid polymer limit of ~9.5 mm.
-* **Low Side Expansion ($\nu \approx 0.10$):** Squeezing the ball down by over 50 mm only bulged the sides by 2.5 mm max. This confirmed that volume drop is driven almost entirely by air evacuation rather than sideways bulging.
-* **Heavily Overdamped Recovery:** The ball returns smoothly to 70 mm in ~0.2 seconds without any bounce or overshoot, allowing me to model recovery as a 1st-order relaxation process ($c \approx 60\text{--}75\text{ Ns/m}$).
+Realizing Basic Spring Rules Don't Work
+My first thought was whether a standard spring formula would work here. But looking at the squish, it quickly became clear that it wouldn't. The ball gets noticeably stiffer the harder you press. If I used a basic linear spring formula, heavy weights would mathematically predict the ball crushing past zero height into negative space, which makes no physical sense.
 
-### Final Result
-I implemented these empirical parameters into an interactive Python simulation (`claude.py`) that visually tracks real-time contact flattening, local strain heatmaps, and overdamped restitution.
+Finding the Physical Limit
+I realized there is a hard stop to how flat the ball can actually get. At a certain point, all the trapped air is completely pushed out, and you are left squeezing solid plastic struts flattened against each other. Once that happens, the ball simply refuses to compress any further. That's why I used a model that flattens out at that exact physical solid limit.
+
+Noticing Where the Squish Goes
+I expected the ball to bulge outward significantly on the sides when squeezed flat, similar to solid rubber. But looking closely, it barely grew sideways at all. This made it clear that almost all the volume loss comes from air escaping the pores, rather than the material pushing outward.
+
+Watching the Recovery
+When releasing the load, I checked to see if the ball bounces or overshoots its shape. Watching the video frame-by-frame showed no bounce at all. It just smoothly relaxes back to its full round shape in a fraction of a second. That meant I could model the spring-back as a smooth, heavily damped return.
+
+SIMULATION INTEGRATION
+I took this step-by-step logic and built it into my Python script (claude.py). It simulates the ball flattening under weight, updates a visual map of the internal strain, and animates the smooth spring-back when released.
