@@ -11,24 +11,24 @@
 | 7 | Limitations |
 
 ## Repository
-| File | Purpose |
+| File | 
 |---|---|
-| `stress_ball_model.py` | fit, prediction and interactive simulation |
-| `[script2.py]` |  
-| `[script3.py]` | 
-| `videos/[loading_1.3-14.3kg].mp4` | raw loading video |
-| `videos/[release_damping].mp4` | raw release video (59.81 fps) |
-| `demo/[demo].mp4` | real ball next to the simulation |
+| `2d_visual.py]` |  
+| `3d_visual.py]` | 
+| `finding damper.mp4` | 
+| `test_video.mp4` | 
 
 ## How to run
 ```
-pip install numpy scipy matplotlib
-python stress_ball_model.py
+python 2d_visual.py
+python 3d_visual.py
 ```
 Move the **Added load** slider, then press **Release**. Fit results and held-out predictions print in the terminal. T
 
 ## Credits
-NumPy, SciPy, Matplotlib; Spring-Gaus (Zhong et al., ECCV 2024) as related work; Claude, Gemini
+Built with Python (NumPy, SciPy, Matplotlib; VLC for frame reading). 
+Theory: Saint-Venant’s principle (Timoshenko & Goodier, Theory of Elasticity) and cellular-solid scaling (Gibson & Ashby, Cellular Solids, 1997). 
+Code and analysis written with help from Claude & Gemini
 
 ## 1. Test Subject & Physical Motivation
 
