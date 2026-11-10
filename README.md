@@ -4,6 +4,7 @@
 
 ### 1.1 Object Selection
 The primary test subject selected for this study is a standard **70 mm diameter open-cell polyurethane (PU) foam stress ball** ($m = 40.0\text{ g}$).
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/883563be-c3ce-4d63-92e3-2874d4fe4931" />
 
 ### 1.2 Engineering Justification
 * **Spherical Boundary Symmetry:** A sphere provides an ideal geometric reference for contact mechanics. Initial contact occurs at a single theoretical point on top and bottom rigid boundaries, allowing direct observation of non-linear contact area expansion ($w_c \propto \sqrt{R_0 \cdot \Delta z}$).
