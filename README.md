@@ -138,8 +138,6 @@ To observe how stiffness evolves with displacement, the effective secant stiffne
 | **10.30** | 101.04 | 9.5 | 60.5 | 0.0605 | 1670.1 |
 | **11.30** | 110.85 | 9.0 | 61.0 | 0.0610 | 1817.2 |
 | **12.30** | 120.66 | 9.0 | 61.0 | 0.0610 | 1978.0 |
-| **13.30** | 130.47 | 9.5 | 60.5 | 0.0605 | 2156.5 |
-| **14.30** | 140.28 | 9.5 | 60.5 | 0.0605 | 2318.7 |
 
 ---
 
@@ -173,7 +171,6 @@ The form is chosen because it satisfies y(0) = H0 and y(∞) = y_min, so it cann
 | 2.3 | 0.343 | 0.034 | 0.100 |
 | 4.3 | 0.500 | 0.051 | 0.103 |
 | 7.3 | 0.729 | 0.071 | 0.098 |
-| 14.3 | 0.864 | 0.071 | 0.083 |
 
 ν stays at about 0.08–0.10 across the full range. The side bulge saturates at 2.5 mm while Δz keeps growing. Lateral expansion is therefore small and volume is not conserved, consistent with open-cell foam in which air leaves through the pores (squeezing the ball underwater released bubbles). With ±0.5 mm resolution on Δr, ν at the lowest load is uncertain by roughly 0.04–0.15.
 
