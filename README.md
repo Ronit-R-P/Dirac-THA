@@ -9,8 +9,7 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 ### 1.2 Why This Object?
 * **Easy Geometry:** A sphere starts contact at a single point, making it simple to track how the contact area flattens.
 * **Same from All Directions (Isotropic):** It squishes identically no matter which side faces up.
-* **Focus on Volumetric Collapse:** Selected specifically to analyze **large volumetric deformation ($\Delta V$) and air expulsion dynamics** as pore air is forced out under load.
-* **Durable:** Can be tested hundreds of times without permanent deformation.
+* **Durable & Availability:** Can be tested hundreds of times without permanent deformation and readily available in market
 
 ---
 
