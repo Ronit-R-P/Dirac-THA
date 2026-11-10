@@ -13,14 +13,14 @@
 ## Repository
 | File | Description |
 |---|---|
-| `2d_visual.py` | 2D simulation: compression from the fitted static curve, plus the recovery animation |
-| `3d_visual.py` | 3D version of the same model |
+| `3d_visual.py` | compression from the fitted static curve, plus the recovery animation |
 | `finding damper.mp4` | Release video used to find the damper (59.8 fps) |
-| `test_video.mp4` | Test video | 
+| `real_vs_sim.mp4` | Test video |
+| `input_data.text` | Input video |
+| `TLDR.text` | Concise explanation |
 
 ## How to run
 ```
-python 2d_visual.py
 python 3d_visual.py
 ```
 Move the **Added load** slider, then press **Release**. Fit results and held-out predictions print in the terminal. T
