@@ -24,13 +24,13 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 | **Radius ($R_0$)** | $35.0\text{ mm}$ | Half of diameter |
 | **Exam Board Mass** | $300.0\text{ g}$ | Tare weight added for load tests |
 
-### 2.2 Proof of Open-Cell Foam (Water Test)
-* **Visual Inspection:** Cut open a twin specimen to confirm uniform internal structure and dip in water to confirm pores.
-  <img width="960" height="1080" alt="photo_2026-11-10_15-17-18" src="https://github.com/user-attachments/assets/8e08e0b2-56e0-488f-a0cb-585453d22e15" />
+### 2.2 Proof of Open-Cell Foam An internal uniformity
+* **Visual Inspection:** Cut open a twin specimen to confirm uniform internal structure
+  <img width="1920" height="1080" alt="photo_2026-11-10_15-17-18" src="https://github.com/user-attachments/assets/8e08e0b2-56e0-488f-a0cb-585453d22e15" />
 
 ## 3. Core Modeling Assumptions
 
-1. **Continuous Macro Material:** Modeled as a smooth, isotropic continuum at the macroscopic level.
+1. **Continuous Material:** Modeled as a smooth, isotropic continuum.
 2. **Uniform Internal Porosity:** Microscopic open pores are assumed to be homogeneously distributed throughout the entire volume of the ball.
 3. **Non-Uniform Vertical Strain Field:** Compressive strain is non-uniform along the vertical height $Z$ (concentrating higher near contact boundaries and decaying into the central core).
 4. **Symmetric Radial Expansion:** At any given height $Z$, horizontal expansion occurs uniformly in all radial directions across the X–Y plane.
