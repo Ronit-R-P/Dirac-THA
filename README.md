@@ -59,7 +59,7 @@ The table below lists all individual experimental measurements recorded during s
 | **9.0** | 88.29 | 10.0 | 60.0 | +2.50 | Densification Floor |
 | **10.0** | 98.10 | 9.5 | 60.5 | +2.50 | Densification Floor (Pores Crushed) |
 | **11.0** | 107.91 | 9.0 | 61.0 | +2.50 | Densification Floor |
-| **12.0** | 117.72 | 10.0 | 60.0 | +2.50 | Densification Floor |
+| **12.0** | 117.72 | 9.0 | 60.0 | +2.50 | Densification Floor |
 | **13.0** | 127.53 | 9.5 | 60.5 | +2.50 | Densification Floor |
 | **14.0** | 137.34 | 9.5 | 60.5 | +2.50 | Densification Floor Limit |
 ---
