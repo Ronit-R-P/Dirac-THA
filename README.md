@@ -1,5 +1,35 @@
 # Soft Object Deformation & Recovery Modeling
 
+## Contents
+| Section | Content |
+|---|---|
+| 1–2 | Object, material, quick tests |
+| 3 | Modelling assumptions |
+| 4 | Experiment, procedure and dataset |
+| 5 | Parameter identification (stiffness, Poisson's ratio, damping) |
+| 6 | Model summary: compression, recovery, prediction, validation |
+| 7 | Limitations |
+
+## Repository
+| File | Purpose |
+|---|---|
+| `stress_ball_model.py` | fit, prediction and interactive simulation |
+| `[script2.py]` |  
+| `[script3.py]` | 
+| `videos/[loading_1.3-14.3kg].mp4` | raw loading video |
+| `videos/[release_damping].mp4` | raw release video (59.81 fps) |
+| `demo/[demo].mp4` | real ball next to the simulation |
+
+## How to run
+```
+pip install numpy scipy matplotlib
+python stress_ball_model.py
+```
+Move the **Added load** slider, then press **Release**. Fit results and held-out predictions print in the terminal. T
+
+## Credits
+NumPy, SciPy, Matplotlib; Spring-Gaus (Zhong et al., ECCV 2024) as related work; [AI assistance (Claude) for code and write-up, if you used it]
+
 ## 1. Test Subject & Physical Motivation
 
 ### 1.1 Object Selection
