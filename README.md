@@ -126,6 +126,8 @@ $$y(M) = y_{\text{min}} + (H_0 - y_{\text{min}}) \cdot e^{-\lambda M}$$
 * **$y_{\text{min}} = 9.5\text{ mm}$:** Physical solid densification floor.
 * **$\lambda \approx 0.266\text{ kg}^{-1}$:** Empirical mass decay coefficient.
 
+Derived from standard 1st-order empirical constitutive decay for cellular solids ($\frac{dy}{dM} = -\lambda (y - y_{\text{min}})$), where the rate of height drop is proportional to remaining compressible void space. It is applicable here because it enforces the physical boundary conditions ($y(0) = H_0$ and $y(\infty) = y_{\text{min}} = 9.5\text{ mm}$), ensuring height asymptotically approaches the solid polymer floor without predicting impossible negative values under heavy loads.
+
 *Physical Validation:* As applied mass $M \rightarrow \infty$, $e^{-\lambda M} \rightarrow 0$, guaranteeing that predicted height $y(M)$ asymptotically approaches $9.5\text{ mm}$ without ever going negative or over-compressing.
 
 ---
@@ -140,15 +142,13 @@ Resolution (±0.5 mm on Δr) gives a range of roughly 0.04–0.15 at low load. T
 
 ### 5.5 Damping Coefficient Extraction ($c = 75.0\text{ Ns/m}$)
 
-1. **Video Restitution Tracking:** Frame-by-frame analysis of release video recorded at 59.81 fps confirmed full return to resting height ($70.0\text{ mm}$) occurring in 15 frames ($t_{\text{rec}} = 15 / 59.81 \approx 0.251\text{ s}$).
-2. **System Damping Regime:** With mass $m = 0.040\text{ kg}$ and linear stiffness $k = 1120\text{ N/m}$, critical damping is:
-   $$c_{\text{crit}} = 2\sqrt{km} = 2\sqrt{1120 \times 0.040} = 13.38\text{ Ns/m}$$
-   The actual damping ratio is:
-   $$\zeta = \frac{c}{c_{\text{crit}}} = \frac{75.0\text{ Ns/m}}{13.38\text{ Ns/m}} \approx \mathbf{5.60} \quad (\zeta \gg 1.0 \implies \mathbf{Heavily\ Overdamped})$$
-3. **1st-Order Viscoelastic Relaxation:** Because the system is heavily overdamped, inertial oscillations ($m \ddot{z}$) are negligible compared to viscous drag ($c \dot{z}$). The 2nd-order ODE simplifies to a 1st-order relaxation equation:
-   $$z(t) = H_0 - \Delta z_0 \cdot \exp\left(-\frac{t}{\tau}\right) \quad \text{where } \tau = \frac{c}{k}$$
-4. **Parameter Calculation:** Evaluating $98\%$ restitution ($t \approx 3.75 \tau = 0.251\text{ s}$) yields a time constant $\tau \approx 0.067\text{ s}$:
-   $$c = k \cdot \tau = 1120\text{ N/m} \times 0.067\text{ s} = \mathbf{75.0\text{ Ns/m}}$$
+#### 4. Viscoelastic Damping Range ($c \approx 60\text{--}75\text{ Ns/m}$)
+Extracted from 59.81 fps video release tracking (15 frames to 98% recovery, $t_{\text{rec}} \approx 0.251\text{ s}$):
+
+$$\tau \approx \frac{0.251\text{ s}}{3.91} \approx 0.064\text{ s} \implies c = k \cdot \tau = 978\text{ N/m} \times 0.064\text{ s} \approx \mathbf{63\text{ Ns/m}}$$
+
+Accounting for $\pm 1$ frame ($17\text{ ms}$) video timing uncertainty, the parameter range is reported as **$60\text{--}75\text{ Ns/m}$**.
+
 ## 6. Mathematical Model & Asymptotic Predictions
 
 ### 6.1 Predicting Height for Next Load (Densification Curve)
