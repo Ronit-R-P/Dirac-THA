@@ -132,10 +132,6 @@ y(M) = y_min + (H0 − y_min) · exp(−λ·M)
 
 The form is chosen because it satisfies y(0) = H0 and y(∞) = y_min, so it cannot predict negative heights. It is an empirical model, not a standard law. The fit over-predicts compression at 2.3–4.3 kg (by about 4–6 mm) and under-predicts it at 8.3–9.3 kg (by about 4–5 mm). Height resolution is about ±0.5 mm.
 
-**Held-out check:** [insert held-out load, predicted height, measured height, error].
-
-**Floor check:** the solid PU volume is about 40 g / 1.15 g/cm³ ≈ 35 cm³, which spread over a disc of radius 35–37 mm is about 8–9 mm thick. This is consistent with the measured 9–9.5 mm floor (the PU density is a typical literature value).
-
 ### 5.4 Poisson's Ratio
 ν = ε_r / ε_z, with ε_z = Δz/H0 and ε_r = Δr/R0 (H0 = 70 mm, R0 = 35 mm).
 
