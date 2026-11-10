@@ -41,7 +41,7 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 ## 4. Full Experiment 
 
 ### 4.1. Experimental Setup
-1. **Load:** 1kg, 2kg, 5kg to get the accurate force given, F = mg
+1. **Load:** 2x 1kg, 2kg, 5kg to get the accurate force given, F = mg
 2. **Plane board:** Equally distribute the force all over the ball
 3. **Measurement scale:** To measure the displacement due to the force
 4. **Glue:** To fix the position of the ball at one point
@@ -111,22 +111,20 @@ To observe how stiffness evolves with displacement, the effective secant stiffne
 
 ---
 
-### 5.3 Mathematical Formulation of Formulated Parameters
+### 5.3 Constitutive Model Formulations
 
-To handle both real-time interactive solver performance and physically accurate full-range predictions, two complementary formulations are established:
+#### 1. Baseline Elastic Stiffness ($k \approx 978\text{ N/m}$)
+The average secant stiffness across the initial loading range (1.30 kg to 4.30 kg) serves as the baseline elastic modulus for low-strain kinematic solvers:
+$$k = \text{mean}(671.1, 940.0, 1097.3, 1205.1) \approx \mathbf{978\text{ N/m}}$$
 
-#### 1. Linear Elastic Range Constant ($k \approx 1120\text{ N/m}$)
-For real-time interactive UI sliders operating within low-to-moderate compression ($\Delta z \le 35.0\text{ mm}$, up to $50\%$ strain), the response is modeled using the average secant stiffness across the 1.30–4.30 kg range:
-$$k = \text{mean}(k_{\text{sec}, 1.3\text{--}4.3\text{kg}}) \approx \mathbf{1120\text{ N/m}}$$
-
-#### 2. Full-Range Non-Linear Asymptotic Densification Model
-To capture all 14 empirical points and mathematically enforce the physical densification limit ($y_{\text{min}} \approx 9.5\text{ mm}$), height $y(M)$ is modeled using an exponential decay function:
+#### 2. Asymptotic Densification Model
+Full-range vertical compression $y(M)$ is modeled via an exponential decay function bounded by the solid polymer limit ($y_{\text{min}} = 9.5\text{ mm}$):
 
 $$y(M) = y_{\text{min}} + (H_0 - y_{\text{min}}) \cdot e^{-\lambda M}$$
 
-* **$H_0 = 70.0\text{ mm}$:** Un-deformed resting height.
-* **$y_{\text{min}} = 9.5\text{ mm}$:** Minimum physical height floor when cell walls are completely crushed flat.
-* **$\lambda = 0.266\text{ kg}^{-1}$:** Mass decay constant fitted via non-linear least-squares over $M \in [1.3, 9.3]\text{ kg}$.
+* **$H_0 = 70.0\text{ mm}$:** Un-deformed initial height.
+* **$y_{\text{min}} = 9.5\text{ mm}$:** Physical solid densification floor.
+* **$\lambda \approx 0.266\text{ kg}^{-1}$:** Empirical mass decay coefficient.
 
 *Physical Validation:* As applied mass $M \rightarrow \infty$, $e^{-\lambda M} \rightarrow 0$, guaranteeing that predicted height $y(M)$ asymptotically approaches $9.5\text{ mm}$ without ever going negative or over-compressing.
 
