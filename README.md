@@ -38,8 +38,22 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 6. **Overdamped Recovery:** The ball returns smoothly to its resting height ($70\text{ mm}$) without oscillating or overshooting.
 ---
 
-## 4. Full Experimental Load Dataset
+## 4. Full Experiment 
 
+### 4.1. Experimental Setup
+1. **Load:** 1kg, 2kg, 5kg to get the accurate force given, F = mg
+2. **Plane board:** Equally distribute the force all over the ball
+3. **Measurement scale:** To measure the displacement due to the force
+4. **Glue:** To fix the position of the ball at one point
+<img width="2560" height="1920" alt="image" src="https://github.com/user-attachments/assets/b393f5ea-9de1-466c-8e05-a3eb186d7e54" />
+
+### 4.2. Experimental Procedure
+1. Fix the ball to the origin of the point of the graph So it will hold steady and will not move in the experiment
+2. Slowly load the masses on the board and press it against the board To find out, Force vs displacement
+3. Measure The compression of the ball by measuring the distance between the datum and the board
+4. Process the video in any kind of media player to measure the number of frames between the compression state of the ball to the relaxed state of the ball
+
+### 4.2. Experimental Dataset
 Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load step ($F = \text{Total Load} \cdot g$):
 
 | Total Applied Load (kg) | Force $F$ (N) | Measured Height $y$ (mm) | Squish $\Delta z$ (mm) | Side Bulge $\Delta r$ (mm) |
