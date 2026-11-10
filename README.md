@@ -11,12 +11,12 @@
 | 7 | Limitations |
 
 ## Repository
-| File | 
+| File | Description |
 |---|---|
-| `2d_visual.py]` |  
-| `3d_visual.py]` | 
-| `finding damper.mp4` | 
-| `test_video.mp4` | 
+| `2d_visual.py` | 2D simulation: compression from the fitted static curve, plus the recovery animation |
+| `3d_visual.py` | 3D version of the same model |
+| `finding damper.mp4` | Release video used to find the damper (59.8 fps) |
+| `test_video.mp4` | Test video | 
 
 ## How to run
 ```
@@ -29,6 +29,7 @@ Move the **Added load** slider, then press **Release**. Fit results and held-out
 Built with Python (NumPy, SciPy, Matplotlib; VLC for frame reading). 
 Theory: Saint-Venant’s principle (Timoshenko & Goodier, Theory of Elasticity) and cellular-solid scaling (Gibson & Ashby, Cellular Solids, 1997). 
 Code and analysis written with help from Claude & Gemini
+Editing: Canva
 
 ## 1. Test Subject & Physical Motivation
 
