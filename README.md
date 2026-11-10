@@ -246,7 +246,17 @@ The fit was repeated with less training data, and the heavier loads were predict
 The error grows quickly once the training data stops before the stiffening region (about 6–9 kg). Predictions are reliable only from data that reaches into that region.
 
 ### 7.3 Recovery
-The damper c is calibrated on the 2, 3 and 4 kg release videos, so these are **not** independent validation. 
+
+| Added load (kg) | Total (kg) | Model (frames) | Observed (frames) | Error (midpoint) | Error range | Status |
+|---|---|---|---|---|---|---|
+| 2 | 2.3 | 11.2 | 12–13 | −10.4% | −13.8% to −6.7% | calibration |
+| 3 | 3.3 | 12.7 | 12–13 | +1.6% | −2.3% to +5.8% | calibration |
+| 4 | 4.3 | 13.6 | 12–13 | +8.8% | +4.6% to +13.3% | calibration |
+| 13 | 13.3 | 15.2 | 10–12 | +38.2% | +26.7% to +52.0% | independent test |
+| 14 | 14.3 | 15.2 | 10–12 | +38.2% | +26.7% to +52.0% | independent test |
+
+Mean absolute error: 6.9% on the calibration loads (not a validation) and 38.2% on the independent loads.
+
 
 ### 7.4 What this does and does not show
 - The 13 and 14 kg points sit on the flat densification floor, so they are the easiest loads to predict. The harder test is the knee region (7.2).
