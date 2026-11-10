@@ -1,9 +1,5 @@
-"""Foam stress ball (3D view): COMPRESSION (fitted static curve) + RECOVERY (first-order damper) + 3D column animation.
-Edit the DATA block, then run:  python stress_ball_model_3d.py
-Fit, damper and recovery are identical to stress_ball_model.py. Only the geometry/drawing is 3D.
-Geometry: nu ~ 0 foam => independent vertical columns, revolved about the vertical axis (axisymmetric).
-          The plate crushes each column to thickness t(r); width = MEASURED bulge; rim roundness (NMAX) is visual only.
-This is parametric curve fitting, not machine learning."""
+"""Run:  python 2d_visual.py
+This is parametric curve fitting"""
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D  # noqa: F401  (registers the 3D projection)
