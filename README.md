@@ -82,19 +82,11 @@ Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load ste
 
 ## 5. Parameter Identification
 
-### 5.1 Inapplicability of Simple Hooke's Law ($F = k \Delta z$)
+### 5.1 Non-Linear Viscoelasticity & Physical Boundary Limits
+A single linear elastic model ($F = k \Delta z$) cannot accurately characterize open-cell polyurethane (PU) foam over large deformations:
 
-Standard linear elastodynamics assumes Hooke's Law ($F = k \Delta z$), where stiffness $k$ remains constant regardless of compressive strain. Applying Hooke's Law directly to an open-cell polyurethane (PU) foam sphere fails physically for the following reasons:
-
-1. **Micro-Structural Regimes:** Flexible foam exhibits three non-linear mechanical phases under uniaxial loading:
-   * **Linear Strut Bending ($\Delta z \le 35.0\text{ mm}$, 1.30–4.30 kg):** Microscopic cell struts bend elastically, yielding a quasi-linear load-displacement curve.
-   * **Cell-Pore Collapse & Air Expulsion ($\Delta z = 45.0\text{--}58.0\text{ mm}$, 5.30–8.30 kg):** Interconnected pores crush shut and trapped air evacuates, causing large vertical displacement with modest force increments.
-   * **Densification Floor ($\Delta z \ge 60.0\text{ mm}$, $\ge 9.30\text{ kg}$):** Opposing solid polymer cell walls flatten completely against one another. Internal void space is exhausted, forcing effective tangent stiffness toward infinity ($k \rightarrow \infty$).
-
-2. **Unphysical Negative Height Prediction:** If a single linear spring constant (e.g., $k = 1120\text{ N/m}$) is extrapolated to heavy loads (such as $14.30\text{ kg}$ or $F = 140.28\text{ N}$):
-   $$\Delta z = \frac{F}{k} = \frac{140.28\text{ N}}{1120\text{ N/m}} = 0.125\text{ m} = 125.25\text{ mm}$$
-   Predicting $\Delta z = 125.25\text{ mm}$ on a $70.0\text{ mm}$ sphere yields an impossible compressed height of $y = 70.0 - 125.25 = \mathbf{-55.25\text{ mm}}$.
-
+* **Moderately Stiffening Response:** Between 1.30 kg and 4.30 kg ($50\%$ strain), the secant stiffness increases by 80% (from 671.1 N/m to 1205.1 N/m). This non-linearity is a combined result of internal cellular strut bending and non-linear geometric contact expansion as the sphere flattens against rigid plates.
+* **Solid Density Bounding:** For a 40.0 g PU specimen ($\rho_{\text{solid}} \approx 1.15\text{ g/cm}^3$), the absolute polymer volume is $V_{\text{solid}} \approx 34.8\text{ cm}^3$. When flattened into a disc of radius $R \approx 35\text{--}37\text{ mm}$, the solid polymer matrix reaches a physical thickness limit of $y_{\text{min}} \approx 8.5\text{--}9.5\text{ mm}$, preventing unphysical negative height predictions under extreme loads.
 ---
 
 ### 5.2 Secant Stiffness Calculation Across Experimental Dataset
