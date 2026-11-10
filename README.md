@@ -219,7 +219,41 @@ c · dz/dt = −F_s(z)
 2. Starting from that compression, step the recovery equation forward in 1 ms steps until the ball is within 2% of 70 mm (6.2).
 3. The animation shows the same compression and release. Each vertical column of foam is crushed independently (Poisson's ratio ≈ 0.1), and the width comes from the measured bulge.
 
-## 7. Limitations
+## 7. Validation
+
+The model is tested on loads it was not fitted to.
+
+### 7.1 Held-out loads (13.3 and 14.3 kg total)
+Fitted on added loads ≤ 12 kg (12.3 kg total). The two heavier loads are predicted from the load alone.
+
+| Total load (kg) | Force (N) | Predicted height (mm) | Measured height (mm) | Error (mm) |
+|---|---|---|---|---|
+| 13.3 | 130.5 | [9.8] | 9.5 | [0.3] |
+| 14.3 | 140.3 | [9.6] | 9.5 | [0.1] |
+
+Held-out RMSE: **[0.3] mm**. Train RMSE: **[2.8] mm**.
+
+### 7.2 How the error depends on training range
+The fit was repeated with less training data, and the heavier loads were predicted each time.
+
+| Fitted on added loads ≤ | Held-out RMSE (mm) | Worst error (mm) |
+|---|---|---|
+| 6 kg | [5.8] | [7.6] |
+| 8 kg | [3.0] | [4.3] |
+| 10 kg | [1.2] | [1.9] |
+| 12 kg | [0.3] | [0.4] |
+
+The error grows quickly once the training data stops before the stiffening region (about 6–9 kg). Predictions are reliable only from data that reaches into that region.
+
+### 7.3 Recovery
+The damper c is calibrated on the 2, 3 and 4 kg release videos, so these are **not** independent validation. 
+
+### 7.4 What this does and does not show
+- The 13 and 14 kg points sit on the flat densification floor, so they are the easiest loads to predict. The harder test is the knee region (7.2).
+- The floor comes from the ball's mass and a typical PU density, not from the heavy-load data, so the prediction does not depend on seeing those loads.
+- Light loads are under-compressed by about [4] mm, which is the main weakness of the fit.
+
+## 8. Limitations
 
 - **Small dataset:** 14 load points and 3 release videos from one ball. Fitted values may not transfer to other balls.
 - **Static loading only:** the ball was loaded slowly with weights. Rate dependence (fast presses, drops, impact) is not modelled or tested.
