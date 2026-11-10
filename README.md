@@ -159,32 +159,39 @@ c = k·τ = 978 × 0.064 ≈ **63 N·s/m** (range 59–67)
 The damping ratio ζ = c / (2·√(k·m)) ≈ 5 (m = 0.040 kg), so the ball is heavily overdamped.
 
 
-## 6. Mathematical Model & Asymptotic Predictions
+## 6. Model Summary
 
-### 6.1 Predicting Height for Next Load (Densification Curve)
-To handle the plateau past 9 kg without predicting negative heights, the model uses an asymptotic exponential decay function:
+**Inputs:** the applied mass M. **Outputs:** compressed height, the recovery curve after release, and an animation of the deformation.
 
-$$y(M) = y_{\text{min}} + (H_0 - y_{\text{min}}) \cdot e^{-\lambda M}$$
+### 6.1 Compression (loading)
+1. Force on the ball: F = (M + M_board)·g.
+2. Compression follows a saturating "knee" curve fitted to the load data:
 
-* $H_0 = 70.0\text{ mm}$ (Resting Height)
-* $y_{\text{min}} = 9.5\text{ mm}$ (Physical Densification Floor)
-* $\lambda = 0.266\text{ kg}^{-1}$ (Fitted Mass Decay Rate)
+   Δz = D·F / (F^q + Fc^q)^(1/q),  height y = H0 − Δz
 
-*Result:* As load $M \rightarrow \infty$, predicted height $y(M)$ approaches $9.5\text{ mm}$ naturally, matching real-world foam behavior.
+   - Linear at light load, with initial stiffness Fc/D ≈ [1066] N/m.
+   - Flattens at the maximum compression D, because the voids run out (densification).
+   - D = H0 − (solid-polymer slab thickness) = [61.0] mm, fixed from the ball's mass and an assumed PU density of 1.15 g/cm³ (typical value, not measured).
+   - Fc = [__] N and q = [__] are the only two fitted numbers, fitted by nonlinear least squares (`scipy.optimize.curve_fit`) on the training loads.
+3. Fitted on loads ≤ 12 kg. The 13 and 14 kg loads are predicted, not fitted.
 
-### 6.2 Overdamped Recovery ODE
-The time-domain restitution trajectory follows a first-order relaxation curve:
+### 6.2 Recovery (release)
+After the load is removed, the foam spring pushes the ball back while damping resists the motion. The ball is heavily overdamped (no overshoot was seen), so inertia is neglected:
 
-$$z(t) = H_0 - \Delta z_0 \cdot \exp\left(-\frac{k}{c} t\right)$$
+c · dz/dt = −F_s(z)
 
----
+- F_s(z) is the fitted compression curve above, read as force versus compression.
+- c = [88.9] N·s/m is fitted so the model matches the observed recovery of **[15]** frames at 2, 3 and 4 kg. "Recovered" means within 2% of rest height (1.4 mm), at 59.8 fps.
+- For small compression F_s ≈ k·z, so the recovery is an exponential with τ = c/k ≈ [0.083] s. At large compression the curve is stiffer, so the ball springs back faster at first and slows near the end.
 
-## 7. Interactive Python Simulations
+### 6.3 How it predicts a new load
+1. Mass in → force → compressed height (6.1).
+2. Starting from that compression, step the recovery equation forward in 1 ms steps until the ball is within 2% of 70 mm (6.2).
+3. The animation shows the same compression and release. Each vertical column of foam is crushed independently (Poisson's ratio ≈ 0.1), and the width comes from the measured bulge.
 
-### How to Run
-```bash
-# 2D Interactive Kinematics & Strain Heatmap
-python stress_ball_2d.py
+## 7. Limitations
 
-# 3D Volumetric Point Cloud Model
-python stress_ball_3d.py
+- **Small dataset:** 14 load points and 3 release videos from one ball. Fitted values may not transfer to other balls.
+- **Static loading only:** the ball was loaded slowly with weights. Rate dependence (fast presses, drops, impact) is not modelled or tested.
+- **Structural, not material, properties:** the measured curve combines foam, skin and sphere geometry. Stiffness in N/m is not a Young's modulus.
+- **Simplified geometry:** the model treats the ball as an axisymmetric set of independent columns. It ignores shear between neighbouring columns and skin tension. The rim shape in the animation is a visual choice, not measured.
