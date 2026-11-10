@@ -29,9 +29,6 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 * **Visual Inspection:** Cut open a twin specimen to confirm uniform internal pores.
   <img width="1920" height="1080" alt="photo_2026-11-10_15-17-18" src="https://github.com/user-attachments/assets/8e08e0b2-56e0-488f-a0cb-585453d22e15" />
 
-
-## 3. Core Modeling Assumptions
-
 ## 3. Core Modeling Assumptions
 
 1. **Continuous Macro Material:** Modeled as a smooth, isotropic continuum at the macroscopic level.
@@ -41,10 +38,6 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 5. **Lumped Viscoelasticity:** Pneumatic air flow drag and internal polymer matrix friction are combined into a single macroscopic damping coefficient ($c$).
 6. **Overdamped Recovery:** The ball returns smoothly to its resting height ($70\text{ mm}$) without oscillating or overshooting.
 ---
-
-## 4. Full Experimental Load Dataset (0 kg to 14 kg)
-
-The table below lists all individual experimental measurements recorded during static weight loading ($H_0 = 70.0\text{ mm}$):
 
 ## 4. Full Experimental Load Dataset
 
