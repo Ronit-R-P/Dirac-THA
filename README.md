@@ -75,6 +75,11 @@ Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load ste
 | **14.30** | 140.28 | 9.5 | 60.5 | +2.50 |
 ---
 
+### 4.2.1. Experimental Dataset Plot
+
+<img width="1600" height="954" alt="image" src="https://github.com/user-attachments/assets/a8313d94-3905-4457-86e2-ad9a3e752f78" />
+
+
 ## 5. Parameter Identification
 
 ### 5.1 Calibrated Stiffness ($k = 1120\text{ N/m}$)
