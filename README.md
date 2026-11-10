@@ -32,27 +32,36 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 
 ## 3. Core Modeling Assumptions
 
-1. **Continuous Material:** Modeled as a smooth, uniform soft body at the macro scale.
-2. **Symmetric Squish:** Vertical squeezing ($Z$-axis) produces equal radial expansion sideways ($X\text{--}Y$ plane).
-3. **Lumped Viscoelasticity:** Air drag and polymer friction are combined into a single damping constant ($c$).
-4. **Recovery:** The ball rebounds smoothly back to shape without bouncing or overshooting past $70\text{ mm}$.
+1. **Continuous Macro Material:** Modeled as a smooth, isotropic continuum at the macroscopic level.
+2. **Uniform Internal Porosity:** Microscopic open pores are assumed to be homogeneously distributed throughout the entire volume of the ball.
+3. **Axisymmetric Deformation:** Vertical compression along the Z-axis produces equal radial bulge ($\Delta r$) in the horizontal X–Y plane.
+4. **Lumped Viscoelasticity:** Pneumatic air flow drag and internal polymer matrix friction are combined into a single macroscopic damping coefficient ($c$).
+5. **Overdamped Recovery:** The ball returns smoothly to its resting height ($70\text{ mm}$) without oscillating or overshooting.
+6. **Flat Rigid-Boundary Contact:** Non-penetrating rigid plate boundaries force the top and bottom surfaces to flatten into contact patches under load.
 
 ---
 
-## 4. Experimental Data & Key Findings
+## 4. Full Experimental Load Dataset (0 kg to 14 kg)
 
-### 4.1 Static Load-Deformation Test (1 kg to 14 kg)
+The table below lists all individual experimental measurements recorded during static weight loading ($H_0 = 70.0\text{ mm}$):
 
-| Load (kg) | Force (N) | Height $y$ (mm) | Squish $\Delta z$ (mm) | Side Bulge $\Delta r$ (mm) | Physical Phase |
+| Load (kg) | Force (N) | Measured Height $y$ (mm) | Squish $\Delta z$ (mm) | Side Bulge $\Delta r$ (mm) | Physical Phase |
 | :---: | :---: | :---: | :---: | :---: | :--- |
-| **0.0** | 0.0 | 70.0 | 0.0 | 0.0 | Resting State |
-| **1.0** | 9.8 | 51.0 | 19.0 | +0.9 | Linear Strut Bending |
-| **2.0** | 19.6 | 46.0 | 24.0 | +1.2 | Linear Strut Bending |
-| **3.0** | 29.4 | 40.5 | 29.5 | +1.5 | Linear Strut Bending |
-| **4.0** | 39.2 | 35.0 | 35.0 | +1.8 | Linear Elastic Limit ($k \approx 1120\text{ N/m}$) |
-| **5.0–8.0** | 49.1–78.5 | 25.0 ➔ 12.0 | 45.0 ➔ 58.0 | +2.2 ➔ +2.5 | Cell-Wall Collapse & Air Expulsion |
-| **9.0–14.0** | 88.3–137.3 | 10.0 ➔ 9.5 | 60.0 ➔ 60.5 | +2.5 (Max) | **Densification Floor** (Solid polymer crushed flat) |
-
+| **0.0** | 0.00 | 70.0 | 0.0 | 0.00 | Fully Relaxed Baseline |
+| **1.0** | 9.81 | 51.0 | 19.0 | +0.90 | Linear Strut Bending |
+| **2.0** | 19.62 | 46.0 | 24.0 | +1.20 | Linear Strut Bending |
+| **3.0** | 29.43 | 40.5 | 29.5 | +1.50 | Linear Strut Bending |
+| **4.0** | 39.24 | 35.0 | 35.0 | +1.80 | Linear Elastic Limit ($50\%$ Strain) |
+| **5.0** | 49.05 | 25.0 | 45.0 | +2.20 | Cell-Wall Collapse & Air Expulsion |
+| **6.0** | 58.86 | 22.0 | 48.0 | +2.40 | Cell-Wall Collapse & Air Expulsion |
+| **7.0** | 68.67 | 19.0 | 51.0 | +2.50 | Cell-Wall Collapse & Air Expulsion |
+| **8.0** | 78.48 | 12.0 | 58.0 | +2.50 | Transition to Densification |
+| **9.0** | 88.29 | 10.0 | 60.0 | +2.50 | Densification Floor |
+| **10.0** | 98.10 | 9.5 | 60.5 | +2.50 | Densification Floor (Pores Crushed) |
+| **11.0** | 107.91 | 9.0 | 61.0 | +2.50 | Densification Floor |
+| **12.0** | 117.72 | 10.0 | 60.0 | +2.50 | Densification Floor |
+| **13.0** | 127.53 | 9.5 | 60.5 | +2.50 | Densification Floor |
+| **14.0** | 137.34 | 9.5 | 60.5 | +2.50 | Densification Floor Limit |
 ---
 
 ## 5. Parameter Identification
