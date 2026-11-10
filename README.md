@@ -82,11 +82,10 @@ Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load ste
 
 ## 5. Parameter Identification
 
-### 5.1 Non-Linear Viscoelasticity & Physical Boundary Limits
+### 5.1 Non-Linear Viscoelasticity 
 A single linear elastic model ($F = k \Delta z$) cannot accurately characterize open-cell polyurethane (PU) foam over large deformations:
 
 * **Moderately Stiffening Response:** Between 1.30 kg and 4.30 kg ($50\%$ strain), the secant stiffness increases by 80% (from 671.1 N/m to 1205.1 N/m). This non-linearity is a combined result of internal cellular strut bending and non-linear geometric contact expansion as the sphere flattens against rigid plates.
-* **Solid Density Bounding:** For a 40.0 g PU specimen ($\rho_{\text{solid}} \approx 1.15\text{ g/cm}^3$), the absolute polymer volume is $V_{\text{solid}} \approx 34.8\text{ cm}^3$. When flattened into a disc of radius $R \approx 35\text{--}37\text{ mm}$, the solid polymer matrix reaches a physical thickness limit of $y_{\text{min}} \approx 8.5\text{--}9.5\text{ mm}$, preventing unphysical negative height predictions under extreme loads.
 ---
 
 ### 5.2 Secant Stiffness Calculation Across Experimental Dataset
