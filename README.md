@@ -175,19 +175,19 @@ The form is chosen because it satisfies y(0) = H0 and y(∞) = y_min, so it cann
 
 ν stays at about 0.08–0.10 across the full range. The side bulge saturates at 2.5 mm while Δz keeps growing. Lateral expansion is therefore small and volume is not conserved, consistent with open-cell foam in which air leaves through the pores (squeezing the ball underwater released bubbles). With ±0.5 mm resolution on Δr, ν at the lowest load is uncertain by roughly 0.04–0.15.
 
-### 5.5 Damping: c ≈ 63 N·s/m (range 59–67)
-**Measurement:** release video at 59.81 fps shows recovery to within 2% of rest height in 15 frames, so t_rec = 15 / 59.81 = 0.251 s (±1 frame = ±17 ms).
+### 5.5 Damping: c ≈ 74 N·s/m (range 71–77)
 
-**Model:** the recovery shows no oscillation, so inertia is neglected and the response is first-order:
+**Measurement:** the release videos (59.8 fps) show recovery to within 2% of rest height (1.4 mm) in 12–13 frames at 2, 3 and 4 kg, so t_rec = 12.5 / 59.81 = 0.209 s (range 0.201–0.217 s, ±0.5 frame = ±8 ms).
 
-z(t) = H0 − Δz0 · exp(−t/τ), with τ = c/k
+**Model:** the recovery shows no oscillation, so inertia is neglected and the response is first-order, with the spring taken from the fitted static curve:
 
-**Result:** 98% settling takes 3.91τ, so τ = 0.251 / 3.91 = 0.064 s (range 0.060–0.068 s). With k = 978 N/m:
+c · dΔz/dt = −F_s(Δz)
 
-c = k·τ = 978 × 0.064 ≈ **63 N·s/m** (range 59–67)
+c is calibrated so that the model matches 12.5 frames on the 2, 3 and 4 kg loads. This gives c ≈ 74 N·s/m (71–77 for 12–13 frames).
 
-The damping ratio ζ = c / (2·√(k·m)) ≈ 5 (m = 0.040 kg), so the ball is heavily overdamped.
+**Cross-check (linear spring):** for a constant stiffness, t_rec = τ·ln(Δz0/ε) with τ = c/k and ε = 1.4 mm. With k = 978 N/m and Δz0 = 24–35 mm, τ ≈ 0.065–0.074 s, so c = k·τ ≈ 67 N·s/m (65–70). This is about 10% below the script value because the real spring stiffens with compression.
 
+**Overdamping:** ζ = c / (2√(k·m)) ≈ 6 (m = 0.040 kg), so the ball is heavily overdamped and the mass does not affect the result.
 
 ## 6. Model Summary
 
