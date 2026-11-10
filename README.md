@@ -32,36 +32,41 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 
 ## 3. Core Modeling Assumptions
 
+## 3. Core Modeling Assumptions
+
 1. **Continuous Macro Material:** Modeled as a smooth, isotropic continuum at the macroscopic level.
 2. **Uniform Internal Porosity:** Microscopic open pores are assumed to be homogeneously distributed throughout the entire volume of the ball.
-3. **Axisymmetric Deformation:** Vertical compression along the Z-axis produces equal radial bulge ($\Delta r$) in the horizontal X–Y plane.
-4. **Lumped Viscoelasticity:** Pneumatic air flow drag and internal polymer matrix friction are combined into a single macroscopic damping coefficient ($c$).
-5. **Overdamped Recovery:** The ball returns smoothly to its resting height ($70\text{ mm}$) without oscillating or overshooting.
-6. **Flat Rigid-Boundary Contact:** Non-penetrating rigid plate boundaries force the top and bottom surfaces to flatten into contact patches under load.
-
+3. **Non-Uniform Vertical Strain Field:** Compressive strain is non-uniform along the vertical height $Z$ (concentrating higher near contact boundaries and decaying into the central core).
+4. **Symmetric Radial Expansion:** At any given height $Z$, horizontal expansion occurs uniformly in all radial directions across the X–Y plane.
+5. **Lumped Viscoelasticity:** Pneumatic air flow drag and internal polymer matrix friction are combined into a single macroscopic damping coefficient ($c$).
+6. **Overdamped Recovery:** The ball returns smoothly to its resting height ($70\text{ mm}$) without oscillating or overshooting.
 ---
 
 ## 4. Full Experimental Load Dataset (0 kg to 14 kg)
 
 The table below lists all individual experimental measurements recorded during static weight loading ($H_0 = 70.0\text{ mm}$):
 
-| Load (kg) | Force (N) | Measured Height $y$ (mm) | Squish $\Delta z$ (mm) | Side Bulge $\Delta r$ (mm) | Physical Phase |
-| :---: | :---: | :---: | :---: | :---: | :--- |
-| **0.0** | 0.00 | 70.0 | 0.0 | 0.00 | Fully Relaxed Baseline |
-| **1.0** | 9.81 | 51.0 | 19.0 | +0.90 | Linear Strut Bending |
-| **2.0** | 19.62 | 46.0 | 24.0 | +1.20 | Linear Strut Bending |
-| **3.0** | 29.43 | 40.5 | 29.5 | +1.50 | Linear Strut Bending |
-| **4.0** | 39.24 | 35.0 | 35.0 | +1.80 | Linear Elastic Limit ($50\%$ Strain) |
-| **5.0** | 49.05 | 25.0 | 45.0 | +2.20 | Cell-Wall Collapse & Air Expulsion |
-| **6.0** | 58.86 | 22.0 | 48.0 | +2.40 | Cell-Wall Collapse & Air Expulsion |
-| **7.0** | 68.67 | 19.0 | 51.0 | +2.50 | Cell-Wall Collapse & Air Expulsion |
-| **8.0** | 78.48 | 12.0 | 58.0 | +2.50 | Transition to Densification |
-| **9.0** | 88.29 | 10.0 | 60.0 | +2.50 | Densification Floor |
-| **10.0** | 98.10 | 9.5 | 60.5 | +2.50 | Densification Floor (Pores Crushed) |
-| **11.0** | 107.91 | 9.0 | 61.0 | +2.50 | Densification Floor |
-| **12.0** | 117.72 | 9.0 | 60.0 | +2.50 | Densification Floor |
-| **13.0** | 127.53 | 9.5 | 60.5 | +2.50 | Densification Floor |
-| **14.0** | 137.34 | 9.5 | 60.5 | +2.50 | Densification Floor Limit |
+## 4. Full Experimental Load Dataset
+
+Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load step ($F = \text{Total Load} \cdot g$):
+
+| Total Applied Load (kg) | Force $F$ (N) | Measured Height $y$ (mm) | Squish $\Delta z$ (mm) | Side Bulge $\Delta r$ (mm) |
+| :---: | :---: | :---: | :---: | :---: |
+| **0.00** | 0.00 | 70.0 | 0.0 | 0.00 |
+| **1.30** | 12.75 | 51.0 | 19.0 | +0.90 |
+| **2.30** | 22.56 | 46.0 | 24.0 | +1.20 |
+| **3.30** | 32.37 | 40.5 | 29.5 | +1.50 |
+| **4.30** | 42.18 | 35.0 | 35.0 | +1.80 |
+| **5.30** | 52.00 | 25.0 | 45.0 | +2.20 |
+| **6.30** | 61.80 | 22.0 | 48.0 | +2.40 |
+| **7.30** | 71.61 | 19.0 | 51.0 | +2.50 |
+| **8.30** | 81.42 | 12.0 | 58.0 | +2.50 |
+| **9.30** | 91.23 | 10.0 | 60.0 | +2.50 |
+| **10.30** | 101.04 | 9.5 | 60.5 | +2.50 |
+| **11.30** | 110.85 | 9.0 | 61.0 | +2.50 |
+| **12.30** | 120.66 | 10.0 | 60.0 | +2.50 |
+| **13.30** | 130.47 | 9.5 | 60.5 | +2.50 |
+| **14.30** | 140.28 | 9.5 | 60.5 | +2.50 |
 ---
 
 ## 5. Parameter Identification
