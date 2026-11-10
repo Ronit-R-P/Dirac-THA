@@ -14,10 +14,11 @@
 | File | Description |
 |---|---|
 | `3d_visual.py` | compression from the fitted static curve, plus the recovery animation |
+| `README.md` | This file |
 | `finding damper.mp4` | Release video used to find the damper (59.8 fps) |
 | `real_vs_sim.mp4` | Test video |
 | `input_data.text` | Input video |
-| `TLDR.text` | Concise explanation |
+| `TLDR.md` | Concise explanation |
 
 ## How to run
 ```
