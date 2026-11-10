@@ -73,7 +73,7 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 ## 4. Full Experiment 
 
 ### 4.1. Experimental Setup
-1. **Load:** 2x 1kg, 2kg, 5kg to get the accurate force given, F = mg
+1. **Load:** 2x 1kg, 2kg, 2x 5kg to get the accurate force given, F = mg
 2. **Plane board:** Equally distribute the force all over the ball
 3. **Measurement scale:** To measure the displacement due to the force
 4. **Glue:** To fix the position of the ball at one point
@@ -106,7 +106,7 @@ Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load ste
 | **13.30** | 130.47 | 9.5 | 60.5 | +2.50 | 
 | **14.30** | 140.28 | 9.5 | 60.5 | +2.50 | 
 
-From here, we will be using one 13.3 and 14.3 for testing purposes. This will be unseen by the model
+From here, we will be using 13.3 and 14.3 for testing purposes. This will be unseen by the model
 ---
 
 ### 4.2.1. Experimental Dataset Plot
