@@ -1,10 +1,5 @@
-"""Foam stress ball: COMPRESSION (fitted static curve) + RECOVERY (first-order damper) + column-based animation.
-Edit the DATA block, then run:  python stress_ball_model.py
-Static:   dz = knee(F), floor D fixed from polymer volume (optional), Fc and q fitted to the load data.
-Recovery: c * dz/dt = -F_s(z)   (overdamped, inertia neglected; F_s = fitted static curve).
-Animation: nu ~ 0 foam => independent vertical columns (Winkler). The plate crushes each column to thickness t(x);
-           width comes from the MEASURED bulge; rim roundness (NMAX) is a visual assumption.
-This is parametric curve fitting, not machine learning."""
+"""Run:  python 2d_visual.py
+This is parametric curve fitting"""
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider, Button
