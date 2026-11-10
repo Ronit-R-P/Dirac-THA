@@ -1,1 +1,16 @@
+# TL;DR — Soft Body Manipulation Approach
 
+I picked a standard 70 mm open-cell PU foam stress ball to study soft-body compression and recovery. A sphere keeps the contact geometry symmetrical, and open-cell foam makes it straightforward to observe how trapped air evacuates through internal pores during squeezing.
+
+### My Approach & Setup
+* **Bench-Top Load Test:** I stacked weights from 1 kg up to 14 kg on top of a 300 g wooden exam board, measuring exact compressed height and side bulge at every step.
+* **Video Motion Capture:** I recorded the release dynamics at 60 fps (59.81 fps) to count the exact recovery frames (11 to 15 frames, or roughly 0.18 to 0.25 seconds).
+
+### Key Insights & Assumptions
+* **Ditching Simple Hooke's Law ($F=kx$):** A constant linear spring model fails here. As load increases, stiffness increases by over 80% before locking up. Extrapolating a basic linear spring to 14 kg would predict an impossible negative height.
+* **Enforcing the Physical Floor:** Once all pore air is expelled, solid polymer struts crush flat against each other. I modeled height drop using an exponential decay curve that asymptotically stops at the physical solid polymer limit of ~9.5 mm.
+* **Low Side Expansion ($\nu \approx 0.10$):** Squeezing the ball down by over 50 mm only bulged the sides by 2.5 mm max. This confirmed that volume drop is driven almost entirely by air evacuation rather than sideways bulging.
+* **Heavily Overdamped Recovery:** The ball returns smoothly to 70 mm in ~0.2 seconds without any bounce or overshoot, allowing me to model recovery as a 1st-order relaxation process ($c \approx 60\text{--}75\text{ Ns/m}$).
+
+### Final Result
+I implemented these empirical parameters into an interactive Python simulation (`claude.py`) that visually tracks real-time contact flattening, local strain heatmaps, and overdamped restitution.
