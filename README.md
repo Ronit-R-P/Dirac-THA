@@ -111,43 +111,57 @@ To observe how stiffness evolves with displacement, the effective secant stiffne
 
 ---
 
-### 5.3 Constitutive Model Formulations
+### 5.3 Fitted Models
 
-#### 1. Baseline Elastic Stiffness ($k \approx 978\text{ N/m}$)
-The average secant stiffness across the initial loading range (1.30 kg to 4.30 kg) serves as the baseline elastic modulus for low-strain kinematic solvers:
-$$k = \text{mean}(671.1, 940.0, 1097.3, 1205.1) \approx \mathbf{978\text{ N/m}}$$
+**Baseline stiffness (low compression):** the mean of k_sec over 1.30–4.30 kg gives
 
-#### 2. Asymptotic Densification Model
-Full-range vertical compression $y(M)$ is modeled via an exponential decay function bounded by the solid polymer limit ($y_{\text{min}} = 9.5\text{ mm}$):
+k = (671.1 + 940.0 + 1097.3 + 1205.1) / 4 = **978 N/m**
 
-$$y(M) = y_{\text{min}} + (H_0 - y_{\text{min}}) \cdot e^{-\lambda M}$$
+This is an effective structural stiffness (N/m), not a material modulus. It applies only for Δz ≤ 35 mm.
 
-* **$H_0 = 70.0\text{ mm}$:** Un-deformed initial height.
-* **$y_{\text{min}} = 9.5\text{ mm}$:** Physical solid densification floor.
-* **$\lambda \approx 0.266\text{ kg}^{-1}$:** Empirical mass decay coefficient.
+**Full-range height model (empirical saturating fit):**
 
-Derived from standard 1st-order empirical constitutive decay for cellular solids ($\frac{dy}{dM} = -\lambda (y - y_{\text{min}})$), where the rate of height drop is proportional to remaining compressible void space. It is applicable here because it enforces the physical boundary conditions ($y(0) = H_0$ and $y(\infty) = y_{\text{min}} = 9.5\text{ mm}$), ensuring height asymptotically approaches the solid polymer floor without predicting impossible negative values under heavy loads.
+y(M) = y_min + (H0 − y_min) · exp(−λ·M)
 
-*Physical Validation:* As applied mass $M \rightarrow \infty$, $e^{-\lambda M} \rightarrow 0$, guaranteeing that predicted height $y(M)$ asymptotically approaches $9.5\text{ mm}$ without ever going negative or over-compressing.
+| Parameter | Value | Meaning |
+|---|---|---|
+| H0 | 70.0 mm | measured rest height |
+| y_min | 9.5 mm | measured densification floor |
+| λ | 0.266 kg⁻¹ | non-linear least-squares fit, M = 1.3–9.3 kg |
+| RMSE | 3.8 mm | fit error over 1.3–9.3 kg |
 
----
+The form is chosen because it satisfies y(0) = H0 and y(∞) = y_min, so it cannot predict negative heights. It is an empirical model, not a standard law. The fit over-predicts compression at 2.3–4.3 kg (by about 4–6 mm) and under-predicts it at 8.3–9.3 kg (by about 4–5 mm). Height resolution is about ±0.5 mm.
 
-### 5.4 Poisson’s ratio
+**Held-out check:** [insert held-out load, predicted height, measured height, error].
 
-At M = 7.3 kg: ε_z = 51/70 = 0.729 and ε_r = 2.5/35 = 0.071, so ν = 0.098 ≈ 0.10.
+**Floor check:** the solid PU volume is about 40 g / 1.15 g/cm³ ≈ 35 cm³, which spread over a disc of radius 35–37 mm is about 8–9 mm thick. This is consistent with the measured 9–9.5 mm floor (the PU density is a typical literature value).
 
-Resolution (±0.5 mm on Δr) gives a range of roughly 0.04–0.15 at low load. The result shows that lateral expansion is small and volume is not conserved, consistent with open-cell foam where air escapes through the pores. Underwater squeezing produced bubbles, which supports open cells.
+### 5.4 Poisson's Ratio
+ν = ε_r / ε_z, with ε_z = Δz/H0 and ε_r = Δr/R0 (H0 = 70 mm, R0 = 35 mm).
 
----
+| M (kg) | ε_z | ε_r | ν |
+|---|---|---|---|
+| 1.3 | 0.271 | 0.026 | 0.095 |
+| 2.3 | 0.343 | 0.034 | 0.100 |
+| 4.3 | 0.500 | 0.051 | 0.103 |
+| 7.3 | 0.729 | 0.071 | 0.098 |
+| 14.3 | 0.864 | 0.071 | 0.083 |
 
-### 5.5 Damping Coefficient Extraction ($c = 75.0\text{ Ns/m}$)
+ν stays at about 0.08–0.10 across the full range. The side bulge saturates at 2.5 mm while Δz keeps growing. Lateral expansion is therefore small and volume is not conserved, consistent with open-cell foam in which air leaves through the pores (squeezing the ball underwater released bubbles). With ±0.5 mm resolution on Δr, ν at the lowest load is uncertain by roughly 0.04–0.15.
 
-#### 4. Viscoelastic Damping Range ($c \approx 60\text{--}75\text{ Ns/m}$)
-Extracted from 59.81 fps video release tracking (15 frames to 98% recovery, $t_{\text{rec}} \approx 0.251\text{ s}$):
+### 5.5 Damping: c ≈ 63 N·s/m (range 59–67)
+**Measurement:** release video at 59.81 fps shows recovery to within 2% of rest height in 15 frames, so t_rec = 15 / 59.81 = 0.251 s (±1 frame = ±17 ms).
 
-$$\tau \approx \frac{0.251\text{ s}}{3.91} \approx 0.064\text{ s} \implies c = k \cdot \tau = 978\text{ N/m} \times 0.064\text{ s} \approx \mathbf{63\text{ Ns/m}}$$
+**Model:** the recovery shows no oscillation, so inertia is neglected and the response is first-order:
 
-Accounting for $\pm 1$ frame ($17\text{ ms}$) video timing uncertainty, the parameter range is reported as **$60\text{--}75\text{ Ns/m}$**.
+z(t) = H0 − Δz0 · exp(−t/τ), with τ = c/k
+
+**Result:** 98% settling takes 3.91τ, so τ = 0.251 / 3.91 = 0.064 s (range 0.060–0.068 s). With k = 978 N/m:
+
+c = k·τ = 978 × 0.064 ≈ **63 N·s/m** (range 59–67)
+
+The damping ratio ζ = c / (2·√(k·m)) ≈ 5 (m = 0.040 kg), so the ball is heavily overdamped.
+
 
 ## 6. Mathematical Model & Asymptotic Predictions
 
