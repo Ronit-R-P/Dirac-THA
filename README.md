@@ -101,8 +101,10 @@ Includes the $0.30\text{ kg}$ wooden exam board tare mass added to each load ste
 | **10.30** | 101.04 | 9.5 | 60.5 | +2.50 |
 | **11.30** | 110.85 | 9.0 | 61.0 | +2.50 |
 | **12.30** | 120.66 | 9.0 | 61.0 | +2.50 |
-| **13.30** | 130.47 | 9.5 | 60.5 | +2.50 | -- Unseen by the model 
-| **14.30** | 140.28 | 9.5 | 60.5 | +2.50 | -- used for testing
+| **13.30** | 130.47 | 9.5 | 60.5 | +2.50 | 
+| **14.30** | 140.28 | 9.5 | 60.5 | +2.50 | 
+
+From here, we will be using one 13.3 and 14.3 for testing purposes. This will be unseen by the model
 ---
 
 ### 4.2.1. Experimental Dataset Plot
