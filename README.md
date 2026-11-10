@@ -25,8 +25,8 @@ The primary test subject selected for this study is a standard **70 mm diameter 
 | **Exam Board Mass** | $300.0\text{ g}$ | Tare weight added for load tests |
 
 ### 2.2 Proof of Open-Cell Foam (Water Test)
-* **Visual Inspection:** Cut open a twin specimen to confirm uniform internal pores.
-  <img width="1920" height="1080" alt="photo_2026-11-10_15-17-18" src="https://github.com/user-attachments/assets/8e08e0b2-56e0-488f-a0cb-585453d22e15" />
+* **Visual Inspection:** Cut open a twin specimen to confirm uniform internal structure and dip in water to confirm pores.
+  <img width="960" height="1080" alt="photo_2026-11-10_15-17-18" src="https://github.com/user-attachments/assets/8e08e0b2-56e0-488f-a0cb-585453d22e15" />
 
 ## 3. Core Modeling Assumptions
 
