@@ -130,16 +130,11 @@ $$y(M) = y_{\text{min}} + (H_0 - y_{\text{min}}) \cdot e^{-\lambda M}$$
 
 ---
 
-### 5.4 Poisson's Ratio Calibration ($\nu = 0.10$)
+### 5.4 Poisson’s ratio
 
-Poisson's ratio ($\nu = \frac{\varepsilon_r}{\varepsilon_z}$) measures lateral radial expansion relative to vertical axial compression:
+At M = 7.3 kg: ε_z = 51/70 = 0.729 and ε_r = 2.5/35 = 0.071, so ν = 0.098 ≈ 0.10.
 
-1. **Reasoning:** Solid rubber preserves volume ($\nu = 0.50$), producing large side bulging when squeezed. Open-cell foam loses volume as air escapes, resulting in minimal side bulging.
-2. **Empirical Extraction:** At $7.30\text{ kg}$ total load ($\Delta z = 51.0\text{ mm}$, measured side bulge $\Delta r = +2.50\text{ mm}$):
-   $$\text{Axial Strain: } \varepsilon_z = \frac{\Delta z}{H_0} = \frac{51.0\text{ mm}}{70.0\text{ mm}} = 0.7143 \quad (71.43\%)$$
-   $$\text{Radial Strain: } \varepsilon_r = \frac{\Delta r}{R_0} = \frac{2.50\text{ mm}}{35.0\text{ mm}} = 0.0714 \quad (7.14\%)$$
-   $$\nu = \frac{\varepsilon_r}{\varepsilon_z} = \frac{0.0714}{0.7143} \approx \mathbf{0.10}$$
-3. **Conclusion:** A Poisson's ratio of $\nu = 0.10$ provides concrete proof that over $80\%$ of macroscopic volume reduction is absorbed by internal pore evacuation rather than lateral bulge.
+Resolution (±0.5 mm on Δr) gives a range of roughly 0.04–0.15 at low load. The result shows that lateral expansion is small and volume is not conserved, consistent with open-cell foam where air escapes through the pores. Underwater squeezing produced bubbles, which supports open cells.
 
 ---
 
